@@ -13,7 +13,7 @@ env:
 
 jobs:
   buildmacCatalyst:
-    runs-on: macos-12
+    runs-on: macos-latest
     
     steps:
       - uses: actions/checkout@v2
@@ -60,7 +60,7 @@ jobs:
             8.0/Apps/WeatherTwentyOne/src/artifacts/**/*.pkg
   
   buildiOS:
-    runs-on: macos-12
+    runs-on: macos-latest
     
     steps:
       - uses: actions/checkout@v2
