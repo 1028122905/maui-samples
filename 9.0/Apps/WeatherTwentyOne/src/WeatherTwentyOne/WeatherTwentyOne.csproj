@@ -53,7 +53,7 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 	</PropertyGroup>
 <ItemGroup>
-  <PackageReference Include="Microsoft.MacCatalyst.Sdk" Version="18.0.0" />
+  <PackageReference Include="Microsoft.MacCatalyst.Sdk" Version="17.2.9244-net9-p2" />
 </ItemGroup>
   <ItemGroup>
     <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#081B25" />
