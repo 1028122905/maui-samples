@@ -36,14 +36,14 @@ jobs:
     
       - name: Restore nuget packages
         run: |
-          cd 6.0/Apps/WeatherTwentyOne/src/
+          cd 8.0/Apps/WeatherTwentyOne/src/
           dotnet restore WeatherTwentyOne.sln
         
         # https://docs.microsoft.com/en-us/dotnet/maui/macos/deployment/overview
       - name : Build MacCatalyst App
         shell: bash
         run: |
-          cd 6.0/Apps/WeatherTwentyOne/src
+          cd 8.0/Apps/WeatherTwentyOne/src
           dotnet build -f net7.0-maccatalyst -c Release -o ./artifacts
           dotnet publish -f net7.0-maccatalyst -c Release -p:BuildIpa=True -o ./artifacts
 
@@ -57,7 +57,7 @@ jobs:
         with:
           name: artifacts-mac
           path: |
-            6.0/Apps/WeatherTwentyOne/src/artifacts/**/*.pkg
+            8.0/Apps/WeatherTwentyOne/src/artifacts/**/*.pkg
   
   buildiOS:
     runs-on: macos-12
@@ -111,14 +111,14 @@ jobs:
     
       - name: Restore nuget packages
         run: |
-          cd 6.0/Apps/WeatherTwentyOne/src/
+          cd 8.0/Apps/WeatherTwentyOne/src/
           dotnet restore WeatherTwentyOne.sln
         
         # https://docs.microsoft.com/en-us/dotnet/maui/ios/deployment/overview
       - name : Build iOS App
         shell: bash
         run: |
-          cd 6.0/Apps/WeatherTwentyOne/src
+          cd 8.0/Apps/WeatherTwentyOne/src
           dotnet build -f net7.0-ios -c Debug /p:packageApp=false /p:buildForSimulator=true /p:ArchiveOnBuild=false
 
 #       - name: Build and Run UnitTests
@@ -131,5 +131,5 @@ jobs:
         with:
           name: artifacts-ios
           path: |
-            6.0/Apps/WeatherTwentyOne/src/WeatherTwentyOne/bin/Debug/net7.0-ios/iossimulator-x64/**/*.app
+            8.0/Apps/WeatherTwentyOne/src/WeatherTwentyOne/bin/Debug/net7.0-ios/iossimulator-x64/**/*.app
       
