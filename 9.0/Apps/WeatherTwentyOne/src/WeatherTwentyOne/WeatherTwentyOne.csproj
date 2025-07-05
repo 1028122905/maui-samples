@@ -52,6 +52,9 @@
 		<CodesignProvision>MyMauiApp</CodesignProvision> -->
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 	</PropertyGroup>
+<ItemGroup>
+  <PackageReference Include="Microsoft.MacCatalyst.Sdk" Version="18.0.0" />
+</ItemGroup>
   <ItemGroup>
     <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#081B25" />
     <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#081B25" />
