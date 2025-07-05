@@ -13,7 +13,7 @@ env:
 
 jobs:
   buildmacCatalyst:
-    runs-on: macos-latest
+    runs-on: macos-14
     
     steps:
       - uses: actions/checkout@v4
@@ -40,6 +40,8 @@ jobs:
           dotnet restore WeatherTwentyOne.sln
         
         # https://docs.microsoft.com/en-us/dotnet/maui/macos/deployment/overview
+      - name: Select Xcode 16.4
+        run: sudo xcode-select -s /Applications/Xcode_16.4.app
       - name : Build MacCatalyst App
         shell: bash
         run: |
@@ -60,7 +62,7 @@ jobs:
             9.0/Apps/WeatherTwentyOne/src/artifacts/**/*.pkg
   
   buildiOS:
-    runs-on: macos-latest
+    runs-on: macos-14
     
     steps:
       - uses: actions/checkout@v4
