@@ -155,7 +155,7 @@ jobs:
         shell: bash
         run: |
           cd 8.0/Apps/WeatherTwentyOne/src
-          dotnet build -f net8.0-ios -c Debug /p:packageApp=false /p:buildForSimulator=false /p:ArchiveOnBuild=true /p:CodesignKey=None /p:CodesignProvision=None
+          dotnet build -f net8.0-ios -c Debug /p:packageApp=false /p:buildForSimulator=false /p:ArchiveOnBuild=true /p:CodesignKey=None /p:CodesignProvision=None -o ./artifacts
           ls -R ./
 
 #       - name: Build and Run UnitTests
