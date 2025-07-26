@@ -1,4 +1,4 @@
-name: macOSCI
+name: iOS
 
 on:
   push:
