@@ -155,7 +155,9 @@ jobs:
         shell: bash
         run: |
           cd 8.0/Apps/WeatherTwentyOne/src
-          dotnet build -f net8.0-ios -c Debug /p:packageApp=false /p:buildForSimulator=false /p:ArchiveOnBuild=true /p:CodesignKey=None /p:CodesignProvision=None -o ./artifacts
+          dotnet build WeatherTwentyOne/WeatherTwentyOne.csproj -f net8.0-ios -c Debug /p:packageApp=false /p:buildForSimulator=false /p:ArchiveOnBuild=true /p:CodesignKey=None /p:CodesignProvision=None -o ./artifacts
+          ls -R ./artifacts
+          echo "test---------------------------------------------------------------------------------------------------------------------------------------------"
           ls -R ./
 
 #       - name: Build and Run UnitTests
@@ -169,4 +171,5 @@ jobs:
           name: artifacts-ios
           path: |
             8.0/Apps/WeatherTwentyOne/src/WeatherTwentyOne/bin/Debug/net8.0-ios/iossimulator-x64/**/*.app
+            #8.0/Apps/WeatherTwentyOne/src/WeatherTwentyOne/bin/Debug/net8.0-ios/iossimulator-x64/**/*.app
       
