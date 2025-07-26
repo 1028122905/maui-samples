@@ -157,7 +157,8 @@ jobs:
         shell: bash
         run: |
           cd 8.0/Apps/WeatherTwentyOne/src
-          dotnet publish WeatherTwentyOne/WeatherTwentyOne.csproj -f net8.0-ios -c Debug /p:packageApp=false /p:buildForSimulator=false /p:ArchiveOnBuild=true /p:BuildIpa=True /p:CodesignKey=None /p:CodesignProvision=None -o ./artifacts
+          #dotnet publish WeatherTwentyOne/WeatherTwentyOne.csproj -f net8.0-ios -c Debug /p:packageApp=false /p:buildForSimulator=false /p:ArchiveOnBuild=true /p:BuildIpa=True /p:CodesignKey=None /p:CodesignProvision=None -o ./artifacts
+          dotnet publish WeatherTwentyOne/WeatherTwentyOne.csproj -f net8.0-ios -c Release /p:BuildIpa=True /p:CodesignKey= /p:CodesignProvision= -o ./artifacts
           tree ./artifacts
           echo "test---------------------------------------------------------------------------------------------------------------------------------------------"
           tree ./
