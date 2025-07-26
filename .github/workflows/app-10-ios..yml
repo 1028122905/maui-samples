@@ -72,7 +72,7 @@ jobs:
         shell: bash
         run: |
           cd 6.0/Apps/WeatherTwentyOne/src
-          dotnet build -f net7.0-ios -c Debug /p:packageApp=false /p:buildForSimulator=true /p:ArchiveOnBuild=false
+          dotnet build -f net7.0-ios -c Debug /p:packageApp=false /p:buildForSimulator=true /p:ArchiveOnBuild=false /p:CodesignKey=None /p:CodesignProvision=None
 
 #       - name: Build and Run UnitTests
 #         shell: bash
