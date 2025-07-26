@@ -151,14 +151,16 @@ jobs:
           dotnet restore WeatherTwentyOne.sln
         
         # https://docs.microsoft.com/en-us/dotnet/maui/ios/deployment/overview
+      - name: 安装 tree 工具
+        run: brew install tree
       - name : Build iOS App
         shell: bash
         run: |
           cd 8.0/Apps/WeatherTwentyOne/src
           dotnet build WeatherTwentyOne/WeatherTwentyOne.csproj -f net8.0-ios -c Debug /p:packageApp=false /p:buildForSimulator=false /p:ArchiveOnBuild=true /p:CodesignKey=None /p:CodesignProvision=None -o ./artifacts
-          ls -R ./artifacts
+          tree ./artifacts
           echo "test---------------------------------------------------------------------------------------------------------------------------------------------"
-          ls -R ./
+          tree ./
 
 #       - name: Build and Run UnitTests
 #         shell: bash
